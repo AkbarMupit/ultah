@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>誕生日おめでとう</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg id="bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <pattern id="sg" width="60" height="30" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#8fb0ff" stroke-width="1.5">
+        <circle cx="0" cy="30" r="30"/><circle cx="0" cy="30" r="22"/><circle cx="0" cy="30" r="14"/>
+        <circle cx="30" cy="15" r="30"/><circle cx="30" cy="15" r="22"/><circle cx="30" cy="15" r="14"/>
+        <circle cx="60" cy="30" r="30"/><circle cx="60" cy="30" r="22"/><circle cx="60" cy="30" r="14"/>
+      </g>
+    </pattern>
+  </defs>
+  <circle cx="620" cy="110" r="46" fill="#f4ecdc" opacity=".16"/>
+  <polygon points="60,440 330,210 400,175 470,210 740,440" fill="#2c3474" opacity=".75"/>
+  <polygon points="330,210 400,175 470,210 445,222 415,208 388,230 362,212" fill="#f4ecdc" opacity=".55"/>
+  <g fill="#d7263d" opacity=".6">
+    <rect x="640" y="305" width="12" height="140"/><rect x="728" y="305" width="12" height="140"/>
+    <path d="M618 300 Q690 284 762 300 L757 314 L623 314 Z"/><rect x="634" y="330" width="112" height="8"/>
+  </g>
+  <rect x="0" y="430" width="800" height="170" fill="#161b44" opacity=".85"/>
+  <rect x="0" y="430" width="800" height="170" fill="url(#sg)" opacity=".38"/>
+  <path d="M0 70 Q90 85 170 35" stroke="#5a3a2a" stroke-width="6" fill="none"/>
+  <g fill="#ffb7c5" opacity=".85">
+    <circle cx="40" cy="72" r="9"/><circle cx="70" cy="80" r="11"/><circle cx="105" cy="72" r="9"/>
+    <circle cx="135" cy="52" r="10"/><circle cx="165" cy="36" r="9"/><circle cx="88" cy="58" r="8"/><circle cx="150" cy="68" r="7"/>
+  </g>
+</svg>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+  <section id="setup">
+    <h1>Siapa yang berulang tahun?</h1>
+    <label for="nama">Nama</label>
+    <input id="nama" maxlength="24" autocomplete="off" placeholder="Contoh: Aisyah">
+    <label for="umur">Umur</label>
+    <input id="umur" type="number" min="1" max="120" value="17">
+    <button id="mulai">Mulai</button>
+  </section>
+
+  <section id="stage" hidden>
+    <div class="hero">
+      <div class="sun"></div>
+      <div class="big">誕生日</div>
+      <div class="sub">おめでとう</div>
+    </div>
+    <h2 id="sapa"></h2>
+    <div class="cake" aria-hidden="true"><div id="lamps"></div><div class="tier t2"></div><div class="tier t1"></div></div>
+    <p id="hint0" style="margin:0 0 14px">Buat permohonan, lalu tiup lilinnya.</p>
+    <svg id="gt" viewBox="0 0 640 230" role="img" aria-label="Gitar listrik dengan enam senar">
+      <rect x="40" y="2" width="560" height="226" fill="none"/>
+      <path d="M236 78 C226 60 214 36 196 26 C186 20 176 28 170 36 C150 28 110 24 74 42 C36 60 18 100 26 140 C34 182 72 208 112 208 C142 208 166 200 178 190 C186 202 202 214 212 204 C222 192 230 172 236 156 Z" fill="#d7263d" stroke="#5a0f1a" stroke-width="4"/>
+      <path d="M92 86 C120 66 176 70 214 96 L214 138 C190 164 140 172 108 156 C80 140 74 104 92 86 Z" fill="#f4ecdc" opacity=".9"/>
+      <g fill="#1a1a1f" stroke="#c9c2b0" stroke-width="2">
+        <rect x="190" y="62" width="22" height="110" rx="4"/>
+        <rect x="132" y="62" width="22" height="110" rx="4"/>
+      </g>
+      <g fill="#c9c2b0"><circle cx="201" cy="76" r="2"/><circle cx="201" cy="95" r="2"/><circle cx="201" cy="114" r="2"/><circle cx="201" cy="133" r="2"/><circle cx="201" cy="152" r="2"/>
+      <circle cx="143" cy="76" r="2"/><circle cx="143" cy="95" r="2"/><circle cx="143" cy="114" r="2"/><circle cx="143" cy="133" r="2"/><circle cx="143" cy="152" r="2"/></g>
+      <rect x="84" y="64" width="12" height="102" rx="3" fill="#c9c2b0" stroke="#5a5a60" stroke-width="2"/>
+      <g fill="#1a1a1f" stroke="#e8b44a" stroke-width="2.5"><circle cx="112" cy="186" r="9"/><circle cx="146" cy="190" r="9"/><circle cx="178" cy="178" r="9"/></g>
+      <rect x="236" y="62" width="330" height="106" fill="#3a2314" stroke="#1a0d06" stroke-width="3"/>
+      <g stroke="#c9c2b0" stroke-width="3">
+        <line x1="300" y1="62" x2="300" y2="168"/><line x1="360" y1="62" x2="360" y2="168"/>
+        <line x1="415" y1="62" x2="415" y2="168"/><line x1="465" y1="62" x2="465" y2="168"/>
+        <line x1="510" y1="62" x2="510" y2="168"/>
+      </g>
+      <rect x="566" y="48" width="60" height="134" rx="8" fill="#2a170c" stroke="#1a0d06" stroke-width="3"/>
+      <g fill="#e8b44a"><circle cx="584" cy="70" r="5"/><circle cx="584" cy="115" r="5"/><circle cx="584" cy="160" r="5"/>
+      <circle cx="608" cy="70" r="5"/><circle cx="608" cy="115" r="5"/><circle cx="608" cy="160" r="5"/></g>
+      <g id="strings"></g>
+    </svg>
+    <p id="hint">Gesek senar dengan jari atau kursor. Nadanya bergaya pentatonik Jepang.</p>
+    <div>
+      <button id="tiup">Tiup lilin</button>
+      <button id="strum" class="alt">Strum</button>
+      <button id="drv" class="alt">Distorsi: nyala</button>
+      <button id="lagu" class="alt">Mainkan lagu</button>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
